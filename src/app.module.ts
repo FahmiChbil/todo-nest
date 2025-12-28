@@ -10,7 +10,7 @@ dotenv.config();
 
 @Module({
   
-  imports: [TodosModule , MongooseModule.forRoot(process.env.MONGO_URI ), AuthModule],
+  imports: [TodosModule , MongooseModule.forRoot(process.env.MONGO_URI || "" ), AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
